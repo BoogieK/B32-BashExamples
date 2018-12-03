@@ -10,11 +10,19 @@ Menu(){
 }
 
 Menu
-read -p "Quel est votre choix : " choix
+ 
+choix=z
 
-if test $choix = "d"
-then 
-	./exercice1.sh
-else
-	echo "Quitter"
-fi
+while test $choix != q
+do
+	Menu
+	read -p "Quel est votre choix : " choix 
+	if test $choix = "d"
+	then 
+		./exercice1.sh
+		sleep 1
+	else
+		echo "Quitter"
+	fi
+done
+clear
